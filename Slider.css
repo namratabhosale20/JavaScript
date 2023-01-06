@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    height: 100vh;
+    text-align: center;
+}
+.items{
+    /* border: 1px solid red; */
+    padding: 10px;
+    box-shadow:  0 0 5px gray;
+}
+button{
+    border: none;
+    font-size: 26px;
+    margin: 6px;
+    background: transparent;
+    color: blue;
+    cursor: pointer;
+}
+h1{
+    font-family: cursive;
+    font-size: 20px;
+}
