@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .container-fluid {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid greenyellow;
+            width: 100%;
+            height: 100vh;
+            padding-top: 10px;
+            justify-content: center;
+            box-shadow: 0px 4px 30px gainsboro;
+            border-radius: 50px;
+            margin-top: 10px;
+
+        }
+
+        .container-fluid .container .part1 fieldset {
+            width: 600px;
+            max-width: 400px;
+            height: 100px;
+            padding: 30px 0px 10px 15px;
+            margin-bottom: 30px
+        }
+
+        .part1 fieldset input {
+            margin-bottom: 15px;
+            width: 50%;
+            padding: 5px;
+            outline: none;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+
+
+
+        }
+
+        .container-fluid .container .part2 fieldset {
+            width: 600px;
+            max-width: 400px;
+            height: 200px;
+            padding: 30px 0px 10px 15px;
+            margin-bottom: 30px
+        }
+
+        .part2 fieldset input {
+            margin-bottom: 15px;
+            width: 50%;
+            padding: 5px;
+            outline: none;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+
+
+
+        }
+
+        .container-fluid .container1 fieldset {
+            width: 600px;
+            max-width: 400px;
+            height: 200px;
+            padding: 30px 0px 10px 15px;
+            margin-bottom: 30px
+        }
+
+        table {
+            border: 1px solid grey;
+            /* border-collapse: collapse; */
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        table th,
+        tr {
+            border: 1px solid black;
+            padding: 10px;
+          
+            /* border-bottom: 1px solid #ddd; */
+
+        }
+
+        .container-fluid .container {
+            display: flex;
+            justify-content: space-evenly;
+
+            margin-left: 30px;
+            gap: 40px;
+        }
+
+        fieldset {
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px grey;
+            border: 1px solid gray;
+            color: orangered;
+        }
+
+        legend {
+            color: black;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Hotel Bill</h2>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="part1">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    Full Name: <input type="text" id="name"> <br>
+                    Your Email: <input type="text" id="email">
+                </fieldset>
+            </div>
+            <div class="part2">
+                <fieldset>
+                    <legend>Your Orders</legend>
+                    Samosa(Rs.10): <input type="text" id="samosa"><br>
+                    Kachori(Rs.12): <input type="text" id="kachori"><br>
+                    Vadapav(Rs.60): <input type="text" id="vadapav"><br>
+                    Maggi(Rs.50): <input type="text" id="maggi">
+                </fieldset>
+            </div>
+        </div>
+        <div class="container1">
+            <fieldset>
+                <legend>Your Bill</legend>
+                <h3>Your Name: <span id="name2"></span></h3>
+                <h3>Your Email: <span id="email2"></span></h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Menu</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Amount</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="billstatement"></tbody>
+
+
+                </table>
+            </fieldset>
+            <h1>Total Amount: Rs. <span id="amount"></span></h1>
+        </div>
+    </div>
+    <!-- <script>
+        var name, email;
+        document.getElementById("name").addEventListener("keyup", function () {
+            name = document.getElementById("name").value;////or name=this.value;(not use this also)
+            document.getElementById("name2").innerHTML = name;//innerhtml.this.value{directly use this}
+
+        })
+
+        document.getElementById("email").addEventListener("keyup", function () {
+            email = document.getElementById("email").value
+            document.getElementById("email2").innerHTML = email;
+        })
+        var samosa_price = 10, kachori_price = 12, vadapav_price = 60, maggi_price = 50;
+        var samosa_q = 0,kachori_q=0,vadapav_q=0,maggi_q=0;
+        var billstatement="";
+        var samosapriceshow="",kachoripriceshow="",vadapavpriceshow="",maggipriceshow="";
+
+        document.getElementById("samosa").addEventListener("keyup", function () {
+            if (this.value == "" || this.value == 0) {
+                // document.getElementById("billstatement").innerHTML = ""
+                samosapriceshow="";
+                showbill()
+            }
+            else {
+
+
+                samosa_q = this.value
+                // document.getElementById("billstatement").innerHTML = "<tr><td>Samosa</td><td>Rs." + samosa_price + "</td><td>" + samosa_q + "</td><td>" + samosa_price + "x" + samosa_q + "= " + samosa_price * samosa_q + "</td></tr>"
+                samosapriceshow="<tr><td>Samosa</td><td>Rs." + samosa_price + "</td><td>" + samosa_q + "</td><td>" + samosa_price + "x" + samosa_q + "= " + samosa_price * samosa_q + "</td></tr>"
+                showbill();
+            }
+        });
+
+        document.getElementById("kachori").addEventListener("keyup",function(){
+            if(this.value==""||this.value==0){
+                // document.getElementById("billstatement").innerHTML="";
+                kachoripriceshow="";
+                showbill();
+            }
+            else{
+                kachori_q=this.value;
+                // document.getElementById("billstatement").innerHTML="<tr><td>Kachori</td><td>Rs."+kachori_price+"</td><td>"+kachori_q+"</td><td>"+kachori_price+"x"+kachori_q+"="+kachori_price*kachori_q+"</td></tr>"
+                 kachoripriceshow="<tr><td>Kachori</td><td>Rs."+kachori_price+"</td><td>"+kachori_q+"</td><td>"+kachori_price+"x"+kachori_q+"="+kachori_price*kachori_q+"</td></tr>"
+                showbill();
+            }
+        })
+
+        document.getElementById("vadapav").addEventListener("keyup",function(){
+            if(this.value==""||this.value==0){
+                // document.getElementById("billstatement").innerHTML="";
+                vadapavpriceshow="";
+                showbill();
+            }
+            else{
+                vadapav_q=this.value;
+                // document.getElementById("billstatement").innerHTML="<tr><td>Kachori</td><td>Rs."+kachori_price+"</td><td>"+kachori_q+"</td><td>"+kachori_price+"x"+kachori_q+"="+kachori_price*kachori_q+"</td></tr>"
+                 vadapavpriceshow="<tr><td>Vadapav</td><td>Rs."+vadapav_price+"</td><td>"+vadapav_q+"</td><td>"+vadapav_price+"x"+vadapav_q+"="+vadapav_price*vadapav_q+"</td></tr>"
+                showbill();
+            }
+        })
+        document.getElementById("maggi").addEventListener("keyup",function(){
+            if(this.value==""||this.value==0){
+                // document.getElementById("billstatement").innerHTML="";
+                  maggipriceshow="";
+                showbill();
+            }
+            else{
+                maggi_q=this.value;
+                // document.getElementById("billstatement").innerHTML="<tr><td>Kachori</td><td>Rs."+kachori_price+"</td><td>"+kachori_q+"</td><td>"+kachori_price+"x"+kachori_q+"="+kachori_price*kachori_q+"</td></tr>"
+                 maggipriceshow="<tr><td>Maggi</td><td>Rs."+maggi_price+"</td><td>"+maggi_q+"</td><td>"+maggi_price+"x"+maggi_q+"="+maggi_price*maggi_q+"</td></tr>"
+                showbill();
+            }
+        })
+
+        function showbill(){
+            document.getElementById("billstatement").innerHTML=samosapriceshow+kachoripriceshow+vadapavpriceshow+maggipriceshow;   
+            document.getElementById("amount").innerHTML=samosa_price*samosa_q+kachori_price*kachori_q+vadapav_price*vadapav_q+maggi_price*maggi_q;  
+          } -->
+
+    <!-- </script> -->
+    <script src="Bill.js"></script>
+</body>
+
+</html>
