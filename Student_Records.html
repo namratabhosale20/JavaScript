@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+        .container {
+            background-color: white;
+            width: 30%;
+            /* border: 1px solid black; */
+            border-left: 1px solid gainsboro;
+            border-top: 1px solid gainsboro;
+            /* text-align: center; */
+            margin-left: 33rem;
+            padding: 10px;
+            padding-top: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            padding-left: 30px;
+            box-shadow: 8px 8px #868686;
+        }
+
+        .label input {
+            width: 70%;
+            margin-bottom: 1rem;
+            padding: 5px;
+            outline: none;
+            border: 1px solid gainsboro;
+            margin-left: 1rem;
+            border-radius: 4px;
+        }
+
+        .btn {
+            text-align: center;
+
+        }
+
+        input[type="Submit"] {
+            width: 60%;
+            margin-top: 2rem;
+            padding: 6px 10px;
+            background-color: blue;
+            color: white;
+            outline: none;
+            border: 1px solid skyblue;
+            text-transform: uppercase;
+            border-radius: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 50px auto;
+            background-color: burlywood;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        td {
+            color:white;
+            background-color: rgb(246, 118, 118);
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 2rem;
+            text-decoration: underline;
+
+        }
+
+        .input {
+            margin-left: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h2>Registration Form</h2>
+        </div>
+        <div class="label">
+            <div class="input">Name: <input type="text" id="name"></div>
+            <div class="input">Age: <input type="text" id="age"></div>
+            <div class="input">Phone: <input type="text" id="phone"></div>
+            <div class="input">Mail: <input type="text" id="mail"></div>
+
+        </div>
+        <div class="input">Gender: <input type="radio" id="gen" required >Male 
+            <input type="radio" id="gen">Female
+        </div>
+        <div class="btn">
+            <input id="entry" type="Submit" value="Submit">
+        </div>
+    </div>
+    <table id="display">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mail</th>
+            <th>Phone</th>
+          
+        </tr>
+    </table>
+
+    <!-- <script>
+        var entry = document.getElementById("entry");
+        entry.addEventListener('click', displayDetails);
+        var row = 1;
+        function displayDetails() {
+            var name = document.getElementById("name").value
+            var age = document.getElementById("age").value
+            var mail = document.getElementById("mail").value
+            var phone = document.getElementById("phone").value
+            var gen=document.getElementById("gen").value;
+
+            if (!name || !age || !mail || !phone) {
+                alert("Please Enter Details!!")
+                return;
+            }
+
+            var display = document.getElementById("display");
+            var newrow = display.insertRow(row);
+            var cell1 = newrow.insertCell(0);
+            var cell2 = newrow.insertCell(1);
+            var cell3 = newrow.insertCell(2);
+            var cell4 = newrow.insertCell(3);
+            
+
+            cell1.innerHTML = name;
+            cell2.innerHTML = age;
+            cell3.innerHTML = mail;
+            cell4.innerHTML = phone;
+            row++;
+        }
+
+    </script> -->
+    <script src="Student_Records.js"></script>
+</body>
+
+</html>
