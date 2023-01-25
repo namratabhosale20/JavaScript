@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         #firsttable{
+            border: 1px solid gainsboro;
+            padding: 10px;
+            width: 350px;
+            margin-bottom: 2rem;
+            margin-left: 5rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            box-shadow: 4px 8px #868686;
+         }
+         input{
+            width: 90%;
+            padding: 6px;
+            margin-bottom: 7px;
+            border-radius: 3px;
+            outline: none;
+            border: 1px solid gray;
+            margin-top: 3px;
+         }
+        input[type="submit"]{
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            outline: none;
+            border: 1px solid skyblue;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        input[type="reset"]
+        {
+            margin-top: 20px;
+            background-color: orangered;
+            color: white;
+            outline: none;
+            border: 1px solid skyblue;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+        .list{
+            border-collapse: collapse;
+            width: 60%;
+            text-align: center;
+            margin: 50px auto;
+        }
+        th{
+            background-color: burlywood;
+        }
+        #edit, #del{
+            color: red;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          cursor: pointer;
+        }
+        #form1{
+            padding-left: 2em;
+        }
+        .heading{
+            color: rgb(255, 136, 0);
+            border-radius: 15px;
+            margin-left: 40rem;
+            text-decoration: underline;
+            
+        }
+        h1{
+           
+            padding: 10px;
+        }
+        .btns{
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="firsttable">
+        <div class="heading">
+            <h1>CRUD Operation</h1>
+        </div>
+       
+        <tr>
+            <td id="form1">
+                <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label for="">Full Name</label> <br>
+                        <input type="text" id="name">
+                    </div>
+                    <div>
+                        <label for="">EMP Code</label> <br>
+                        <input type="text" id="empcode">
+                    </div>
+                    <div>
+                        <label for="">Salary</label> <br>
+                        <input type="text" id="salary">
+                    </div>
+                    <div>
+                        <label for="">City</label> <br>
+                        <input type="text" id="city">
+                    </div>
+                   
+                        <div class="btns">
+                            <input type="submit" value="submit">
+                            <input onclick="resetForm()" type="reset" value="reset">
+                        </div>
+                       
+                  
+                </form>
+            </td>
+            <table class="list" id="employeelist" border="1">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>EMP Code</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </tr>
+    </table>
+    <script src="CRUD_Operation.js"></script>
+</body>
+
+</html>
