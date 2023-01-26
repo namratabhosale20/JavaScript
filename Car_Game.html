@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            height: 500px;
+            width: 390px;
+            border: 1px solid black;
+            margin: 1rem auto;
+            background: url("https://media.istockphoto.com/photos/view-of-the-infinity-empty-asphalt-international-race-track-picture-id926063122?k=6&m=926063122&s=170667a&w=0&h=zCY_tl6qCagFwaa1x7EsRE2c7AGKrDjIPmZSZlNjvsI=");
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        #bluecar {
+            height: 100px;
+            width: 130px;
+            /* background-color: black; */
+            position: relative;
+            text-align: center;
+            top: 0px;
+            left: 0px;
+            animation: move 1s linear infinite;
+
+        }
+
+        @keyframes move {
+            0% {
+                top: 0px;
+
+            }
+
+            100% {
+                top: 501px;
+            }
+        }
+
+        #racecar {
+            height: 100px;
+            width: 130px;
+            /* background-color: red; */
+            position: relative;
+            top: 250px;
+            left: 130px;
+            text-align: center
+        }
+
+        #bluecar img {
+            width: 100px;
+
+        }
+
+        #racecar img {
+            height: 100px;
+
+        }
+        #result{
+            height: 200px;
+            width: 400px;
+            background-color: cornflowerblue;
+            margin: 1rem auto;
+          border-radius: 20px;
+          font-size: 30px;
+          text-align: center;
+          color: white;
+          display: none;
+          
+        }
+        #score{
+            font-size: 2.2rem;
+            color: red;
+        }
+        #btn{
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            border: none;
+            background-color: black;
+            color: cyan;
+            font-size: 25px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="game">
+        <div id="bluecar">
+            <img src="http://www.clker.com/cliparts/n/d/y/Q/d/k/blue-car-hi.png" alt="">
+        </div>
+        <div id="racecar">
+            <img src="https://cdn2.vectorstock.com/i/thumb-large/55/96/cartoon-red-car-cabriolet-front-view-vector-16305596.jpg"
+                alt="">
+        </div>
+    </div>
+    <div id="result">
+        <h1>Game Over</h1>
+        <p id="score"></p>
+        <button id="btn" onclick="location.reload()">Restart</button>
+    </div>
+    <audio id="jumpsound" src="jumpsound.mp3"></audio>
+
+    <script src="Car_Game.js"></script>
+</body>
+
+</html>
