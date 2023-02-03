@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            body{
+                background-color: black;
+            }
+           .calci{
+            border: 1px solid white;
+            margin: auto;
+            width: 20%;
+            height: 300px;
+            text-align: center;
+            margin-top: 7%;
+            border-radius: 5px;
+            padding: 9px 9px 9px 9px;
+           }
+           input{
+            width: 80%;
+            padding: 20px;
+            border: none;
+            outline: none;
+            border: 1px solid rgb(63, 62, 62);
+            border-radius: 3px;
+            margin-bottom: 40px;
+            margin-top: 10px;
+           }
+           button{
+            width: 70px;
+            height: 30px;
+            margin-bottom: 7px;
+            font-size: 1.3rem;
+            background-color: rgb(228, 228, 228);
+            border: none;
+            border-radius: 5px;
+           }
+           .red{
+            color: red;
+           }
+           .green{
+            color: green;
+           }
+           h1{
+            text-transform: capitalize;
+            text-align: center;
+            color: skyblue;
+            letter-spacing: 1.5;
+            font-size: 4rem;
+           }
+        </style>
+    </head>
+    <body>
+       <div class="container">
+        <h1>calculator</h1>
+        <div class="calci">
+            <input type="text" id="inputext"placeholder="0">
+            <br>
+            <button class="red" onclick="clr()">C</button>
+            <button onclick="del()">Del</button>
+            <button class="green"onclick="calculate('%')">%</button>
+            <button class="green"onclick="calculate('/')">/</button>
+            <br>
+            <button onclick="calculate('7')">7</button>
+            <button onclick="calculate('8')">8</button>
+            <button onclick="calculate('9')">9</button>
+            <button class="green" onclick="calculate('*')">*</button>
+            <br>
+            <button onclick="calculate('4')">4</button>
+            <button onclick="calculate('5')">5</button>
+            <button onclick="calculate('6')">6</button>
+            <button class="green" onclick="calculate('-')">-</button>
+            <br>
+            <button onclick="calculate('1')">1</button>
+            <button onclick="calculate('2')">2</button>
+            <button onclick="calculate('3')">3</button>
+            <button class="green" onclick="calculate('+')">+</button>
+            <br>
+            <button onclick="calculate('.')">.</button>
+            <button onclick="calculate('0')">0</button>
+          <button  class="equals green" onclick="result1()">=</button>
+          
+        </div>
+       </div>
+        
+        <script>
+            let result=document.getElementById('inputext');
+            let calculate=(number)=>{
+                           result.value+=number;
+            }
+            let result1=()=>{
+                      try{
+                        result.value=eval(result.value)
+                      }
+                      catch(err){
+                        alert("Enter valid input");
+                      }
+            }
+           function clr()
+            {
+                result.value=" ";
+            }
+            function del()
+            {
+                result.value=result.value.slice(0,-1);
+            }
+        </script>
+    </body>
+</html>
